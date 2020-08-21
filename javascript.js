@@ -19,7 +19,9 @@ $(document).ready(function () {
         var timeDiv = $("<div>");
         var descriptionDiv = $("<textarea>");
         var buttonEl = $ ("<button>")
+        var clearBtn = $ ("<button>")
         var iconEl = $("<i>")
+        
 
         newDiv.attr('data-hour', timeSlots[i]);
         newDiv.attr('class', 'row');
@@ -27,6 +29,8 @@ $(document).ready(function () {
         descriptionDiv.attr('class', 'description col-10')
         timeDiv.attr('class', 'hour col-1')
         buttonEl.attr('class', 'saveBtn col-1');
+        clearBtn.attr('class', )
+
         iconEl.attr('class', 'far fa-save')
 
 
@@ -40,14 +44,35 @@ $(document).ready(function () {
         timeDiv.text(timeSlots[i]);
 
 
-        var currentTime = moment().format('h:mm');
-        console.log(currentTime);
-        // if (currentTime = )
+
+  //Sets the columns to change color according to time
+        if ((i + 7) < moment().hour()) {
+			descriptionDiv.attr('class', 'past')
+		} else if ((i + 7) === moment().hour()) {
+			descriptionDiv.attr('class', 'present')
+		} else {
+			descriptionDiv.attr('class', 'future')
+		}
+
+
+
+
+
+        buttonEl.click(function(){
+            var schedule = $(this).parent().find(".description").val();
+            var timeSch = $(this).parent().attr("data-hour");
+            localStorage.setItem(schedule, timeSch);
+        })
+
+        //delete button
 
 
     }
-    
-    
+
+
+    // $(".clear").on("click", function() {
+
+    // });
     
 
 })

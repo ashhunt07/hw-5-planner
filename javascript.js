@@ -17,6 +17,8 @@ $(document).ready(function () {
         var buttonEl = $("<button>");
         var btnClr = $("<button>");
     
+
+        
     //icon variables
         var iconEl = $("<i>");
         var clearEl = $("<i>");
@@ -49,6 +51,7 @@ $(document).ready(function () {
         timeDiv.text(timeSlots[i]);
 
 
+        
 
   // condition to check past, present and future time slots
         if ((i + 7) < moment().hour()) {
@@ -60,30 +63,44 @@ $(document).ready(function () {
 		}
 
 
+
     // localstorage,getItem() localStorage.setItem() on button click keyword this
         //find item in DOM, set the click function and access local storage 
         // Use keyword this
         // window.localStorage.getItem(this);
 
-        // var loadData = localStorage.getItem.val(schedule);
-        // descriptionDiv.append(loadData);
+        // descriptionDiv.append(schedule);
         
         // document.getElementsByClassName("description").innerHTML = localStorage.getItem(timeSch, schedule);
+        // var schedule = localStorage.getItem("description");
 
+        // var storedTodos = JSON.parse(localStorage.getItem("todos"));
+        // function storeTodos() {
+        //     // Stringify and set "todos" key in localStorage to todos array
+        //     localStorage.setItem("todos", JSON.stringify(todos));
+        //   }
+        // $('data-hour').val(localStorage.getItem(('textarea').val()));
+
+        // $(timeSlots[i]).val(localStorage).getItem(parent().find('textarea').val())
+
+        // document.getElementsByClassName("description").innerHTML = localStorage.getItem(schedule);
+
+        document.getItem.parent().find('textarea').val();
 
 
         //     //save button
             buttonEl.click(function(){
-                var schedule = $(this).parent().find("description").val();
-                var timeSch = $(this).parent().attr("data-hour");
+            // $(".saveBtn").on("click", function(){
+                var schedule = $(this).parent().find('textarea').val();
+                var timeSch = $(this).parent().attr('data-hour');
                 localStorage.setItem(timeSch, schedule);
             })
 
-        // delete button
+        delete button
             btnClr.click(function() {
-                var schedule = $(this).parent().find("description").val();
-                var timeSch = $(this).parent().attr("data-hour");
-                localStorage.removeItem(timeSch, schedule).val("");
+                var schedule = $(this).parent().find('textarea').val();
+                var timeSch = $(this).parent().attr('data-hour');
+                localStorage.removeItem(timeSch, schedule);
             });
 
     }
@@ -92,10 +109,4 @@ $(document).ready(function () {
 
 
 
-//console log to test as you go
-
-//everything has to be seen on refresh
-
-
-
-//Check Section 28 of week 5 - Local Storage Todos
+//Check Section 28 of week 4 - Local Storage Todos

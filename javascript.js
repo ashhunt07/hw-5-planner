@@ -1,16 +1,9 @@
 
 $(document).ready(function () {
 
-    var movie = $(this).attr("data-name");
-
-
-        // var currentDate = require ('moment'); moment().format('dddd', "MMM Do YY");
-        // $("#currentDay").append(currentDate);
-
-        var currentDate = moment().format('dddd MMM Do YYYY');
+    var currentDate = moment().format('dddd MMM Do YYYY');
         document.getElementById("currentDay").innerHTML = currentDate;
 
-    
     var timeSlots=['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm',]
 
 
@@ -18,20 +11,25 @@ $(document).ready(function () {
         var newDiv = $("<div>");
         var timeDiv = $("<div>");
         var descriptionDiv = $("<textarea>");
-        var buttonEl = $ ("<button>")
-        var clearBtn = $ ("<button>")
-        var iconEl = $("<i>")
+        var buttonEl = $("<button>");
+        var btnClr = $("<button>");
+    
+    //icon variables
+        var iconEl = $("<i>");
+        var clearEl = $("<i>");
         
 
         newDiv.attr('data-hour', timeSlots[i]);
         newDiv.attr('class', 'row');
-
-        descriptionDiv.attr('class', 'description col-10')
-        timeDiv.attr('class', 'hour col-1')
+    
+        descriptionDiv.attr('class', 'description col-9');
+        timeDiv.attr('class', 'hour col-1');
         buttonEl.attr('class', 'saveBtn col-1');
-        clearBtn.attr('class', )
-
-        iconEl.attr('class', 'far fa-save')
+        btnClr.attr('class', 'clearBtn col-1');
+        
+    //button icon attrubutes
+        iconEl.attr('class', 'far fa-save');
+        clearEl.attr('class', 'fas fa-eraser');
 
 
         $(".container").append(newDiv);
@@ -39,7 +37,11 @@ $(document).ready(function () {
         newDiv.append(timeDiv);
         newDiv.append(descriptionDiv);
         newDiv.append(buttonEl);
+        newDiv.append(btnClr);
+        
+        //append button icons
         buttonEl.append(iconEl);
+        btnClr.append(clearEl);
         
         timeDiv.text(timeSlots[i]);
 
@@ -47,34 +49,34 @@ $(document).ready(function () {
 
   //Sets the columns to change color according to time
         if ((i + 7) < moment().hour()) {
-			descriptionDiv.attr('class', 'past')
+			descriptionDiv.attr('class', 'past col-9')
 		} else if ((i + 7) === moment().hour()) {
-			descriptionDiv.attr('class', 'present')
+			descriptionDiv.attr('class', 'present col-9')
 		} else {
-			descriptionDiv.attr('class', 'future')
+			descriptionDiv.attr('class', 'future col-9')
 		}
 
 
 
+        // // Save to local storage
+        // var loadData = localStorage.getItem.val(schedule);
+        // descriptionDiv.append(loadData);
 
 
-        buttonEl.click(function(){
-            var schedule = $(this).parent().find(".description").val();
-            var timeSch = $(this).parent().attr("data-hour");
-            localStorage.setItem(schedule, timeSch);
-        })
+        //     //save button
+            buttonEl.click(function(){
+                var schedule = $(this).parent().find(".description").val();
+                var timeSch = $(this).parent().attr("data-hour");
+                localStorage.setItem(timeSch, schedule);
+            })
 
-        //delete button
+        // delete button
+            btnClr.click(function() {
+            localStorage.removeItem(timeSch, schedule).val();
+            });
+        
 
-
-    }
-
-
-    // $(".clear").on("click", function() {
-
-    // });
-    
-
+}
 })
 
 // condition to check past, present and future time slots

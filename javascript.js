@@ -1,7 +1,18 @@
 
 $(document).ready(function () {
 
+    var movie = $(this).attr("data-name");
+
+
+        // var currentDate = require ('moment'); moment().format('dddd', "MMM Do YY");
+        // $("#currentDay").append(currentDate);
+
+        var currentDate = moment().format('dddd MMM Do YYYY');
+        document.getElementById("currentDay").innerHTML = currentDate;
+
+    
     var timeSlots=['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm',]
+
 
     for(var i = 0; i < timeSlots.length; i++) {
         var newDiv = $("<div>");
@@ -27,10 +38,17 @@ $(document).ready(function () {
         buttonEl.append(iconEl);
         
         timeDiv.text(timeSlots[i]);
+
+
+        var currentTime = moment().format('h:mm');
+        console.log(currentTime);
+        // if (currentTime = )
+
+
     }
     
     
-    // timeSlots.forEach()
+    
 
 })
 

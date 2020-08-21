@@ -1,9 +1,12 @@
 
 $(document).ready(function () {
 
+
+    // Date and time displayed on jumbotron > moment().format('MMMM Do YYYY, h:mm:ss a');
     var currentDate = moment().format('dddd MMM Do YYYY');
         document.getElementById("currentDay").innerHTML = currentDate;
 
+    //Calendar time variables
     var timeSlots=['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm',]
 
 
@@ -47,7 +50,7 @@ $(document).ready(function () {
 
 
 
-  //Sets the columns to change color according to time
+  // condition to check past, present and future time slots
         if ((i + 7) < moment().hour()) {
 			descriptionDiv.attr('class', 'past col-9')
 		} else if ((i + 7) === moment().hour()) {
@@ -57,33 +60,38 @@ $(document).ready(function () {
 		}
 
 
+    // localstorage,getItem() localStorage.setItem() on button click keyword this
+        //find item in DOM, set the click function and access local storage 
+        // Use keyword this
+        // window.localStorage.getItem(this);
 
-        // // Save to local storage
         // var loadData = localStorage.getItem.val(schedule);
         // descriptionDiv.append(loadData);
+        
+        // document.getElementsByClassName("description").innerHTML = localStorage.getItem(timeSch, schedule);
+
 
 
         //     //save button
             buttonEl.click(function(){
-                var schedule = $(this).parent().find(".description").val();
+                var schedule = $(this).parent().find("description").val();
                 var timeSch = $(this).parent().attr("data-hour");
                 localStorage.setItem(timeSch, schedule);
             })
 
         // delete button
             btnClr.click(function() {
-            localStorage.removeItem(timeSch, schedule).val();
+                var schedule = $(this).parent().find("description").val();
+                var timeSch = $(this).parent().attr("data-hour");
+                localStorage.removeItem(timeSch, schedule).val("");
             });
-        
 
-}
+    }
 })
 
-// condition to check past, present and future time slots
-// Date and time displayed on jumbotron > moment().format('MMMM Do YYYY, h:mm:ss a');
-// localstorage,getItem() localStorage.setItem() on button click keyword this
-    //find item in DOM, set the click function and access local storage 
-    // Use keyword this
+
+
+
 //console log to test as you go
 
 //everything has to be seen on refresh

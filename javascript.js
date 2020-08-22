@@ -64,31 +64,18 @@ $(document).ready(function () {
 
 
 
+
     // localstorage,getItem() localStorage.setItem() on button click keyword this
         //find item in DOM, set the click function and access local storage 
         // Use keyword this
-        // window.localStorage.getItem(this);
-
-        // descriptionDiv.append(schedule);
-        
-        // document.getElementsByClassName("description").innerHTML = localStorage.getItem(timeSch, schedule);
-        // var schedule = localStorage.getItem("description");
-
-        // var storedTodos = JSON.parse(localStorage.getItem("todos"));
-        // function storeTodos() {
-        //     // Stringify and set "todos" key in localStorage to todos array
-        //     localStorage.setItem("todos", JSON.stringify(todos));
-        //   }
-        // $('data-hour').val(localStorage.getItem(('textarea').val()));
-
-        // $(timeSlots[i]).val(localStorage).getItem(parent().find('textarea').val())
-
-        // document.getElementsByClassName("description").innerHTML = localStorage.getItem(schedule);
-
-        document.getItem.parent().find('textarea').val();
 
 
-        //     //save button
+        function grabSchedule(){
+            descriptionDiv.val((localStorage.getItem('textarea')));
+
+            // document.getElementsByClassName("description").innerHTML = localStorage.getItem(schedule);
+    
+        //save button
             buttonEl.click(function(){
             // $(".saveBtn").on("click", function(){
                 var schedule = $(this).parent().find('textarea').val();
@@ -96,17 +83,15 @@ $(document).ready(function () {
                 localStorage.setItem(timeSch, schedule);
             })
 
-        delete button
+        // delete button
             btnClr.click(function() {
                 var schedule = $(this).parent().find('textarea').val();
                 var timeSch = $(this).parent().attr('data-hour');
                 localStorage.removeItem(timeSch, schedule);
             });
-
+        
+        }
+        grabSchedule();
+    
     }
 })
-
-
-
-
-//Check Section 28 of week 4 - Local Storage Todos

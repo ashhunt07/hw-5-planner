@@ -7,7 +7,7 @@ $(document).ready(function () {
         document.getElementById("currentDay").innerHTML = currentDate;
 
     //Calendar time variables
-    var timeSlots=['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm']
+    var timeSlots=['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm']
 
 
     for(var i = 0; i < timeSlots.length; i++) {

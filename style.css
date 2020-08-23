@@ -1,8 +1,13 @@
 body {
-  background-color: #121416;
-  font-family: 'Open Sans', sans-serif;
+  background-color: #1b1e21;
+  font-family:'Roboto', sans-serif;
   font-size: 16px;
-  line-height: 1;
+  line-height: 1.25;
+}
+
+.display-3{
+  font-size: 60px;
+  color:#fff;
 }
 
 textarea{
@@ -16,17 +21,23 @@ textarea{
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: #e4e7eb;
+  color: #c9cfd6;
   border-radius: 0;
-  border-bottom: 5px solid black;
+  border-bottom: 1px solid #008080;
+  padding-bottom: 1.25em;
 }
 
 .lead{
-  padding: 1em 0 0;
+  font-size:16px;
+  font-weight: 300;
 }
 
 #currentDay{
+  padding: 1em 0 0;
   margin-bottom: 0;
+  color:#FFD75E;
+  font-size: 30px;
+  font-weight: 100;
 }
 
 .description{
@@ -35,45 +46,56 @@ textarea{
 
 .time-block{
   text-align: center;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid #121416;
+  border-top: 3px solid #121416;
 }
 
 .hour {
-  color: #24282c;
+  color: #121416;
+  font-size:14px;
+  font-weight: 500;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  background-color:#adc4c4;
+  border-right: 3px solid #121416;
+  background-color:#FFD75E;
   text-align: center;
-  padding: 30px 1% 0;
+  padding: 31px 1% 0;
 }
 
 .past {
-  background-color: #d3d3d3;
-  color: white;
+  background-color: #f1f3f5;
+  color: #c9cfd6;
+  font-size: 14px;
 }
 
 .present {
-  background-color: #fcd45c;
-  color: white;
+  border: 4px solid #00ffff;
+  background-color: #fff;
+  color: #00b3b3;
+  font-weight: 500;
 }
 
 .future {
-  background-color: #505b62;
-    color: white;
+  background-color: #8EA1AD;
+  border-top: 3px solid #121416;
+  color: #008080;
+  font-size:14px;
+  font-weight:500;
 }
 
 .saveBtn {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: #6AD1FC;
+  background-color: #FCCE44;
   color: white;
   border-style: none;
+  border-left: 3px solid #121416;
+  border-right: 3px solid #121416;
 }
 
 .saveBtn i:hover {
@@ -82,7 +104,7 @@ textarea{
 }
 
 .saveBtn:hover{
-  background-color:#5394B0;
+  background-color:#fcd45c;
   transition: all .3s ease-in-out;
 }
 
@@ -90,7 +112,7 @@ textarea{
 .clearBtn{
   border-radius: 10px;
   border-radius: 10px;
-  background-color: #8F51FC;
+  background-color: #505b62;
   color: white;
   border-style: none;
 }
@@ -101,6 +123,22 @@ textarea{
 }
 
 .clearBtn:hover{
-  background-color:#5E30B0;
+  background-color:#465661;
   transition: all .3s ease-in-out;
+}
+
+footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1.25em 0 .75em;
+  margin-top: 3em;
+  background: #008080;
+  color: #fff;
+  text-align: center;
+}
+
+footer p{
+  font-size: 14px;
 }

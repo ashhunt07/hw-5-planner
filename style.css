@@ -1,4 +1,5 @@
 body {
+  background-color: #121416;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
@@ -8,21 +9,24 @@ textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
-  border-left: 1px solid black;
+  color: #24282c;
   padding: 1em 1%;
 }
 
 .jumbotron {
   text-align: center;
   background-color: transparent;
-  color: black;
+  color: #e4e7eb;
   border-radius: 0;
   border-bottom: 5px solid black;
 }
 
 .lead{
-  padding: 1em 0;
+  padding: 1em 0 0;
+}
+
+#currentDay{
+  margin-bottom: 0;
 }
 
 .description{
@@ -37,13 +41,14 @@ textarea{
 .row {
   white-space: pre-wrap;
   height: 80px;
-  border-top: 1px solid white;;
+  border-top: 1px solid #121416;
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  color: #24282c;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color:#adc4c4;
   text-align: center;
   padding: 30px 1% 0;
 }
@@ -54,21 +59,21 @@ textarea{
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #fcd45c;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
-  color: white;
+  background-color: #505b62;
+    color: white;
 }
 
 .saveBtn {
-  border-left: 1px solid #02677e;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #6AD1FC;
   color: white;
+  border-style: none;
 }
 
 .saveBtn i:hover {
@@ -76,9 +81,26 @@ textarea{
   transition: all .3s ease-in-out;
 }
 
+.saveBtn:hover{
+  background-color:#5394B0;
+  transition: all .3s ease-in-out;
+}
+
+
 .clearBtn{
-  border-radius: 15px;
-  border-radius: 15px;
-  background-color: #02677e;
+  border-radius: 10px;
+  border-radius: 10px;
+  background-color: #8F51FC;
   color: white;
+  border-style: none;
+}
+
+.clearBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}
+
+.clearBtn:hover{
+  background-color:#5E30B0;
+  transition: all .3s ease-in-out;
 }

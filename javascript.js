@@ -7,7 +7,7 @@ $(document).ready(function () {
         document.getElementById("currentDay").innerHTML = currentDate;
 
     //Calendar time variables
-    var timeSlots=['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm',]
+    var timeSlots=['7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', '9pm', '10pm']
 
 
     for(var i = 0; i < timeSlots.length; i++) {
@@ -28,6 +28,12 @@ $(document).ready(function () {
         newDiv.attr('class', 'row');
     
         descriptionDiv.attr('class', 'description col-9');
+
+    //needs to go before the divs are performed
+        let value = localStorage.getItem(timeSlots[i]) || "";
+        descriptionDiv.val(value);
+
+
         timeDiv.attr('class', 'hour col-1');
         buttonEl.attr('class', 'saveBtn col-1');
         btnClr.attr('class', 'clearBtn col-1');
@@ -64,17 +70,6 @@ $(document).ready(function () {
 
 
 
-
-    // localstorage,getItem() localStorage.setItem() on button click keyword this
-        //find item in DOM, set the click function and access local storage 
-        // Use keyword this
-
-
-        function grabSchedule(){
-            descriptionDiv.val((localStorage.getItem('textarea')));
-
-            // document.getElementsByClassName("description").innerHTML = localStorage.getItem(schedule);
-    
         //save button
             buttonEl.click(function(){
             // $(".saveBtn").on("click", function(){
@@ -88,10 +83,9 @@ $(document).ready(function () {
                 var schedule = $(this).parent().find('textarea').val();
                 var timeSch = $(this).parent().attr('data-hour');
                 localStorage.removeItem(timeSch, schedule);
+                $('textarea').val("");
             });
         
-        }
-        grabSchedule();
     
     }
 })
